@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Teknomen (Pvt) Ltd — Your Partner in Progress</title>
+<meta name="description" content="TEKNOMEN delivers practical engineering solutions for Industrial Automation, VFDs, Customized Control Systems, Spindle Monitoring, Industrial Power Backup, PCB Design & Fabrication." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ============================================================
+   THEME TOKENS — Classy editorial palette
+============================================================ */
+:root{
+  /* Light — warm ivory, deep navy, antique gold */
+  --bg:          #faf7f0;
+  --bg-alt:      #f2ede2;
+  --surface:     #ffffff;
+  --surface-2:   #f7f3ea;
+
+  --text:        #0a1a2f;
+  --text-soft:   #3d4a5c;
+  --text-muted:  #7a8394;
+
+  --border:      #e6ddc9;
+  --border-2:    #d9cfb8;
+
+  --navy:        #0d3b66;
+  --navy-2:      #14497a;
+  --gold:        #b8893a;
+  --gold-2:      #d4a55a;
+  --copper:      #b06a3b;
+
+  --accent-grad: linear-gradient(90deg, #0d3b66 0%, #b8893a 100%);
+  --soft-grad:   linear-gradient(135deg, rgba(13,59,102,.06) 0%, rgba(184,137,58,.06) 100%);
+
+  --shadow-sm:   0 1px 2px rgba(10,26,47,.04), 0 2px 8px rgba(10,26,47,.04);
+  --shadow-md:   0 8px 30px rgba(10,26,47,.07);
+  --shadow-lg:   0 30px 70px rgba(10,26,47,.14);
+  --shadow-gold: 0 12px 40px rgba(184,137,58,.28);
+
+  --radius:      6px;
+  --radius-lg:   14px;
+  --container:   1240px;
+  --ease:        cubic-bezier(.22,.61,.36,1);
+  --ease-out:    cubic-bezier(.16,1,.3,1);
+}
+
+[data-theme="dark"]{
+  /* Dark — midnight, warm ivory text, soft gold */
+  --bg:          #080f1a;
+  --bg-alt:      #0d1622;
+  --surface:     #111d2e;
+  --surface-2:   #16243a;
+
+  --text:        #ece6d6;
+  --text-soft:   #b6c1d0;
+  --text-muted:  #7c8a9e;
+
+  --border:      #1c2a3f;
+  --border-2:    #26374f;
+
+  --navy:        #5aa3dd;
+  --navy-2:      #7eb8e8;
+  --gold:        #dfb166;
+  --gold-2:      #efc98a;
+  --copper:      #d68b5a;
+
+  --accent-grad: linear-gradient(90deg, #5aa3dd 0%, #dfb166 100%);
+  --soft-grad:   linear-gradient(135deg, rgba(90,163,221,.10) 0%, rgba(223,177,102,.08) 100%);
+
+  --shadow-sm:   0 1px 2px rgba(0,0,0,.4), 0 2px 8px rgba(0,0,0,.35);
+  --shadow-md:   0 10px 34px rgba(0,0,0,.5);
+  --shadow-lg:   0 30px 70px rgba(0,0,0,.65);
+  --shadow-gold: 0 12px 44px rgba(223,177,102,.22);
+}
+
+/* ============================================================
+   BASE
+============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  transition: background .5s var(--ease), color .5s var(--ease);
+  overflow-x:hidden;
+}
+
+/* Grain texture */
+body::before{
+  content:'';
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+[data-theme="dark"] body::before{mix-blend-mode:screen;opacity:.05}
+
+h1,h2,h3,h4,h5{
+  font-family:'Fraunces',serif;
+  font-weight:500;
+  line-height:1.12;
+  letter-spacing:-.02em;
+  margin:0;
+  color:var(--text);
+  font-variation-settings:"opsz" 144;
+}
+h1{font-weight:400}
+h2{font-weight:500}
+p{margin:0 0 1em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;height:auto}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+::selection{background:var(--gold);color:#fff}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 28px;position:relative;z-index:2}
+.section{padding:120px 0;position:relative}
+.section-alt{background:var(--bg-alt)}
+
+/* Eyebrow + numbered labels */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Inter',sans-serif;
+  text-transform:uppercase;
+  font-size:.72rem;
+  letter-spacing:.28em;
+  color:var(--gold);
+  font-weight:600;
+  margin-bottom:22px;
+}
+.eyebrow::before{
+  content:'';width:32px;height:1px;background:var(--gold);display:block;
+}
+.eyebrow.no-line::before{display:none}
+
+.section-title{
+  font-size:clamp(2.2rem,4.6vw,3.8rem);
+  margin-bottom:22px;
+  letter-spacing:-.03em;
+}
+.section-title em{
+  font-style:italic;color:var(--gold);font-weight:400;
+}
+.section-sub{
+  color:var(--text-soft);
+  max-width:620px;
+  font-size:1.02rem;
+  line-height:1.75;
+}
+
+/* Section number badge */
+.sec-num{
+  font-family:'Fraunces',serif;
+  font-size:.9rem;
+  color:var(--text-muted);
+  letter-spacing:.3em;
+  font-variation-settings:"opsz" 144;
+  font-weight:500;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:15px 30px;
+  border-radius:2px;
+  font-family:'Inter',sans-serif;
+  font-weight:500;letter-spacing:.02em;
+  font-size:.9rem;
+  transition: all .4s var(--ease);
+  position:relative;overflow:hidden;
+  border:1px solid transparent;
+}
+.btn-primary{
+  background:var(--navy);
+  color:#fff;
+}
+[data-theme="dark"] .btn-primary{background:var(--navy);color:#080f1a}
+.btn-primary::before{
+  content:'';position:absolute;inset:0;
+  background:var(--gold);
+  transform:translateY(101%);
+  transition:transform .5s var(--ease-out);
+}
+[data-theme="dark"] .btn-primary::before{background:var(--gold)}
+.btn-primary:hover::before{transform:translateY(0)}
+.btn-primary > *{position:relative;z-index:1}
+.btn-primary:hover{color:#fff}
+[data-theme="dark"] .btn-primary:hover{color:#080f1a}
+
+.btn-ghost{
+  border-color:var(--border-2);
+  color:var(--text);
+}
+.btn-ghost:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  padding-left:38px;
+}
+.btn i{transition:transform .4s var(--ease)}
+.btn:hover i{transform:translateX(5px)}
+
+/* Hairline link (underline sweep) */
+.hairline{
+  display:inline-flex;align-items:center;gap:8px;
+  position:relative;font-weight:500;font-size:.9rem;
+  color:var(--text);
+  padding-bottom:2px;
+}
+.hairline::after{
+  content:'';position:absolute;left:0;bottom:0;right:0;height:1px;
+  background:var(--gold);
+  transform:scaleX(0);transform-origin:right;
+  transition:transform .5s var(--ease-out);
+}
+.hairline:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* ============================================================
+   SCROLL PROGRESS LINE
+============================================================ */
+.scroll-progress{
+  position:fixed;top:0;left:0;right:0;height:2px;
+  z-index:2000;background:transparent;
+  pointer-events:none;
+}
+.scroll-progress__bar{
+  height:100%;width:0%;
+  background:var(--accent-grad);
+  box-shadow:0 0 12px rgba(184,137,58,.5);
+  transition:width .08s linear;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.header{
+  position:fixed;top:2px;left:0;right:0;z-index:1000;
+  background:color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid transparent;
+  transition: all .4s var(--ease);
+}
+.header.scrolled{
+  border-bottom-color:var(--border);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:86px;
+  transition:height .4s var(--ease);
+}
+.header.scrolled .header-inner{height:74px}
+
+/* Logo (uses real image) */
+.logo{
+  display:flex;align-items:center;gap:14px;
+  transition:opacity .3s var(--ease);
+}
+.logo img{
+  height:38px;width:auto;
+  transition:height .4s var(--ease), filter .4s var(--ease);
+  filter: brightness(0) saturate(100%) invert(15%) sepia(38%) saturate(2476%) hue-rotate(193deg) brightness(95%) contrast(95%);
+}
+[data-theme="dark"] .logo img{
+  filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(600%) hue-rotate(346deg) brightness(98%) contrast(92%);
+}
+.header.scrolled .logo img{height:32px}
+
+/* Nav */
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{
+  padding:10px 16px;
+  font-size:.9rem;font-weight:500;
+  color:var(--text-soft);
+  position:relative;
+  transition: color .3s var(--ease);
+}
+.nav a::after{
+  content:'';position:absolute;left:16px;right:16px;bottom:4px;height:1px;
+  background:var(--gold);
+  transform:scaleX(0);transform-origin:right;
+  transition:transform .45s var(--ease-out);
+}
+.nav a:hover, .nav a.active{color:var(--text)}
+.nav a:hover::after, .nav a.active::after{
+  transform:scaleX(1);transform-origin:left;
+}
+
+.header-actions{display:flex;align-items:center;gap:14px}
+
+/* Theme toggle */
+.theme-toggle{
+  width:40px;height:40px;border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid var(--border-2);
+  color:var(--text-soft);
+  transition: all .4s var(--ease);
+  position:relative;overflow:hidden;
+}
+.theme-toggle::before{
+  content:'';position:absolute;inset:0;border-radius:50%;
+  background:var(--gold);
+  transform:scale(0);
+  transition:transform .4s var(--ease-out);
+}
+.theme-toggle:hover::before{transform:scale(1)}
+.theme-toggle:hover{color:#fff;border-color:var(--gold)}
+.theme-toggle i{position:absolute;z-index:1;font-size:.9rem;transition:all .55s var(--ease-out)}
+.theme-toggle .fa-sun{opacity:0;transform:scale(.4) rotate(90deg)}
+.theme-toggle .fa-moon{opacity:1;transform:scale(1) rotate(0)}
+[data-theme="dark"] .theme-toggle .fa-sun{opacity:1;transform:scale(1) rotate(0)}
+[data-theme="dark"] .theme-toggle .fa-moon{opacity:0;transform:scale(.4) rotate(-90deg)}
+
+/* CTA in header */
+.header-cta{
+  padding:11px 22px;
+  background:var(--navy);color:#fff;
+  font-size:.82rem;font-weight:500;
+  letter-spacing:.04em;
+  border-radius:2px;
+  transition: all .35s var(--ease);
+  position:relative;overflow:hidden;
+}
+[data-theme="dark"] .header-cta{color:#080f1a}
+.header-cta::before{
+  content:'';position:absolute;inset:0;
+  background:var(--gold);
+  transform:translateY(101%);
+  transition:transform .4s var(--ease-out);
+}
+.header-cta:hover::before{transform:translateY(0)}
+.header-cta span{position:relative;z-index:1}
+.header-cta:hover{color:#fff}
+[data-theme="dark"] .header-cta:hover{color:#080f1a}
+
+.menu-toggle{display:none;width:42px;height:42px;color:var(--text);font-size:1.05rem}
+
+@media(max-width:1000px){
+  .nav{
+    position:fixed;top:88px;left:0;right:0;
+    background:var(--bg);
+    flex-direction:column;align-items:stretch;
+    padding:16px;gap:2px;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    transform:translateY(-120%);
+    transition:transform .45s var(--ease);
+    max-height:calc(100vh - 88px);overflow-y:auto;
+  }
+  .nav.open{transform:translateY(0)}
+  .nav a{padding:16px 18px}
+  .menu-toggle{display:grid;place-items:center}
+  .header-cta{display:none}
+}
+
+/* ============================================================
+   HERO — editorial
+============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  padding:180px 0 100px;
+  display:flex;align-items:center;
+  overflow:hidden;
+  isolation:isolate;
+  background:var(--bg);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(circle at 15% 20%, color-mix(in srgb, var(--gold) 8%, transparent), transparent 45%),
+    radial-gradient(circle at 85% 75%, color-mix(in srgb, var(--navy) 6%, transparent), transparent 50%);
+}
+
+/* Decorative vertical rule + section number */
+.hero-deco{
+  position:absolute;top:180px;bottom:80px;left:28px;width:1px;
+  background:linear-gradient(to bottom, transparent, var(--border-2), transparent);
+  z-index:1;
+}
+.hero-deco span{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  background:var(--bg);padding:6px 0;
+  font-family:'Fraunces',serif;
+  font-size:.75rem;letter-spacing:.3em;
+  color:var(--text-muted);
+}
+
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .95fr;gap:80px;align-items:center;
+  position:relative;z-index:2;
+}
+
+.hero-content{max-width:640px}
+.hero-content .eyebrow{margin-bottom:28px}
+.hero-content h1{
+  font-size:clamp(2.6rem,5.6vw,4.6rem);
+  line-height:1.02;
+  margin-bottom:30px;
+  letter-spacing:-.035em;
+  font-weight:400;
+}
+.hero-content h1 em{
+  font-style:italic;
+  color:var(--gold);
+  font-weight:300;
+}
+.hero-content p{
+  color:var(--text-soft);
+  font-size:1.08rem;
+  line-height:1.75;
+  max-width:540px;
+  margin-bottom:40px;
+}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+
+/* Hero visual: stacked image cards */
+.hero-visual{
+  position:relative;
+  height:600px;
+}
+.hero-card{
+  position:absolute;
+  border-radius:var(--radius-lg);
+  background:var(--surface);
+  border:1px solid var(--border);
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  transition: transform 1s var(--ease-out), box-shadow .5s var(--ease);
+  will-change:transform;
+}
+.hero-card img{
+  width:100%;height:100%;object-fit:contain;
+  padding:30px;
+  background:var(--surface-2);
+}
+.hero-card--main{
+  width:78%;height:72%;top:8%;right:0;
+  animation: float1 8s ease-in-out infinite;
+}
+.hero-card--sub-1{
+  width:48%;height:44%;bottom:0;left:0;
+  animation: float2 9s ease-in-out infinite;
+  z-index:2;
+}
+.hero-card--sub-2{
+  width:40%;height:34%;top:0;left:8%;
+  animation: float3 7s ease-in-out infinite;
+  z-index:2;
+  background:var(--soft-grad);
+  display:grid;place-items:center;
+  text-align:center;padding:20px;
+}
+.hero-card--sub-2 .mini-label{
+  font-family:'Fraunces',serif;
+  font-size:1.05rem;
+  color:var(--navy);
+  letter-spacing:-.01em;
+}
+[data-theme="dark"] .hero-card--sub-2 .mini-label{color:var(--gold-2)}
+.hero-card--sub-2 .mini-num{
+  font-family:'Fraunces',serif;
+  font-size:2.4rem;
+  color:var(--gold);
+  line-height:1;font-weight:500;
+  font-variation-settings:"opsz" 144;
+}
+
+@keyframes float1{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-22px) rotate(-1deg)}
+}
+@keyframes float2{
+  0%,100%{transform:translateY(0) rotate(2deg)}
+  50%{transform:translateY(18px) rotate(2deg)}
+}
+@keyframes float3{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-14px) rotate(-3deg)}
+}
+
+/* Slide switching animation */
+.hero-card img.fade-swap{opacity:0;transition:opacity .4s ease}
+.hero-card img{opacity:1;transition:opacity .6s ease}
+
+@media(max-width:1000px){
+  .hero{padding:140px 0 80px;min-height:auto}
+  .hero-deco{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:60px}
+  .hero-visual{height:440px}
+  .hero-card--main{width:82%;height:70%}
+  .hero-card--sub-1{width:50%;height:42%}
+  .hero-card--sub-2{width:42%;height:34%}
+}
+@media(max-width:600px){
+  .hero-visual{height:340px}
+  .hero-card img{padding:18px}
+}
+
+/* Scroll cue */
+.scroll-cue{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  color:var(--text-muted);font-size:.68rem;
+  letter-spacing:.3em;text-transform:uppercase;
+  z-index:2;
+}
+.scroll-cue .line{
+  width:1px;height:44px;background:var(--border-2);
+  position:relative;overflow:hidden;
+}
+.scroll-cue .line::after{
+  content:'';position:absolute;inset:0;background:var(--gold);
+  animation: cue 2s ease-in-out infinite;
+  transform-origin:top;
+}
+@keyframes cue{
+  0%{transform:scaleY(0);transform-origin:top}
+  50%{transform:scaleY(1);transform-origin:top}
+  51%{transform-origin:bottom}
+  100%{transform:scaleY(0);transform-origin:bottom}
+}
+@media(max-width:700px){.scroll-cue{display:none}}
+
+/* ============================================================
+   TICKER MARQUEE STRIP
+============================================================ */
+.ticker{
+  background:var(--navy);
+  color:#f4ecd8;
+  padding:22px 0;
+  overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  position:relative;z-index:3;
+}
+[data-theme="dark"] .ticker{background:var(--surface-2);border-color:var(--border)}
+.ticker-track{
+  display:flex;gap:60px;align-items:center;
+  width:max-content;
+  animation: marquee 40s linear infinite;
+  font-family:'Fraunces',serif;
+  font-size:1.1rem;
+  letter-spacing:-.01em;
+  font-weight:400;
+}
+.ticker-item{display:flex;align-items:center;gap:60px;white-space:nowrap}
+.ticker-item span{opacity:.92}
+.ticker-item i{
+  color:var(--gold-2);
+  font-size:.7rem;
+  opacity:.9;
+}
+@keyframes marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ============================================================
+   ABOUT
+============================================================ */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1.05fr;
+  gap:100px;align-items:center;
+}
+.about-visual{
+  position:relative;
+  padding:40px 0;
+}
+.about-image{
+  position:relative;
+  aspect-ratio:1/1.15;
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-md);
+}
+.about-image img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1.4s var(--ease-out);
+}
+.about-image:hover img{transform:scale(1.06)}
+
+.about-frame{
+  position:absolute;
+  top:0;right:-20px;bottom:40px;left:40px;
+  border:1px solid var(--gold);
+  border-radius:var(--radius-lg);
+  z-index:-1;opacity:.4;
+}
+.about-badge{
+  position:absolute;bottom:0;left:-30px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  padding:26px 30px;
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);
+  z-index:2;
+}
+.about-badge .num{
+  font-family:'Fraunces',serif;
+  font-size:2.8rem;line-height:1;
+  color:var(--gold);
+  font-weight:500;
+  margin-bottom:6px;
+  font-variation-settings:"opsz" 144;
+}
+.about-badge .lbl{
+  font-size:.72rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--text-muted);
+  font-weight:600;
+}
+
+.about-content .section-title{margin-bottom:30px}
+.about-content > p{
+  color:var(--text-soft);
+  font-size:1.05rem;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+.about-content strong{color:var(--text);font-weight:600}
+
+.about-list{
+  list-style:none;padding:0;margin:36px 0 40px;
+  display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;
+}
+.about-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:.95rem;color:var(--text-soft);
+}
+.about-list i{
+  color:var(--gold);font-size:.75rem;margin-top:8px;
+}
+
+@media(max-width:1000px){
+  .about-grid{grid-template-columns:1fr;gap:60px}
+  .about-badge{left:0;bottom:-20px}
+  .about-list{grid-template-columns:1fr}
+}
+
+/* ============================================================
+   CAPABILITIES
+============================================================ */
+.caps-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:40px;flex-wrap:wrap;
+  margin-bottom:70px;
+  padding-bottom:36px;
+  border-bottom:1px solid var(--border);
+}
+.caps-head .section-sub{margin:0}
+
+.caps-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid var(--border);
+  border-left:1px solid var(--border);
+}
+.cap{
+  padding:48px 40px;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  position:relative;
+  transition: background .5s var(--ease);
+  overflow:hidden;
+}
+.cap::before{
+  content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;
+  background:var(--accent-grad);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .6s var(--ease-out);
+}
+.cap:hover{background:var(--surface)}
+.cap:hover::before{transform:scaleX(1)}
+
+.cap-num{
+  font-family:'Fraunces',serif;
+  font-size:.78rem;
+  letter-spacing:.28em;
+  color:var(--text-muted);
+  margin-bottom:30px;
+  font-weight:500;
+}
+.cap-icon{
+  width:56px;height:56px;
+  display:grid;place-items:center;
+  color:var(--gold);
+  font-size:1.7rem;
+  margin-bottom:24px;
+  transition: transform .6s var(--ease-out), color .3s var(--ease);
+}
+.cap:hover .cap-icon{
+  transform:translateY(-4px) scale(1.08);
+  color:var(--navy);
+}
+[data-theme="dark"] .cap:hover .cap-icon{color:var(--gold-2)}
+
+.cap h3{
+  font-size:1.35rem;
+  margin-bottom:12px;
+  font-weight:500;
+  letter-spacing:-.015em;
+}
+.cap p{
+  color:var(--text-muted);
+  font-size:.92rem;
+  line-height:1.7;
+  margin:0;
+}
+
+@media(max-width:1000px){
+  .caps-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .caps-grid{grid-template-columns:1fr}
+  .cap{padding:38px 30px}
+}
+
+/* ============================================================
+   STATS — editorial band
+============================================================ */
+.stats{
+  padding:100px 0;
+  background:var(--navy);
+  color:#f4ecd8;
+  position:relative;
+  overflow:hidden;
+}
+[data-theme="dark"] .stats{background:var(--surface-2);color:var(--text)}
+.stats::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 12% 30%, rgba(212,165,90,.14), transparent 40%),
+    radial-gradient(circle at 88% 70%, rgba(212,165,90,.10), transparent 40%);
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;position:relative;z-index:2;
+}
+.stat{
+  padding:0 32px;
+  border-left:1px solid rgba(255,255,255,.14);
+  position:relative;
+}
+[data-theme="dark"] .stat{border-color:var(--border)}
+.stat:first-child{border-left:0}
+.stat-num{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2.4rem,4.4vw,3.6rem);
+  font-weight:400;line-height:1;
+  margin-bottom:16px;
+  color:#f4ecd8;
+  font-variation-settings:"opsz" 144;
+  letter-spacing:-.03em;
+}
+[data-theme="dark"] .stat-num{color:var(--text)}
+.stat-num em{
+  color:var(--gold-2);
+  font-style:italic;font-weight:300;
+}
+.stat-label{
+  font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;font-weight:600;
+  opacity:.75;
+}
+@media(max-width:900px){
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:40px 0}
+  .stat{border-left:0;padding:0 20px}
+  .stat:nth-child(odd){padding-left:0}
+}
+@media(max-width:520px){
+  .stats-grid{grid-template-columns:1fr;gap:36px 0;text-align:center}
+  .stat{padding:0}
+}
+
+/* ============================================================
+   SOLUTIONS
+============================================================ */
+.solutions-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  gap:40px;flex-wrap:wrap;margin-bottom:60px;
+}
+
+.solutions-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+.sol{
+  display:block;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  transition: all .55s var(--ease);
+  position:relative;
+}
+.sol::after{
+  content:'\f061';
+  font-family:'Font Awesome 6 Free';font-weight:900;
+  position:absolute;top:24px;right:24px;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--bg);border:1px solid var(--border);
+  display:grid;place-items:center;
+  font-size:.75rem;color:var(--text);
+  opacity:0;transform:scale(.7) rotate(-45deg);
+  transition: all .5s var(--ease-out);
+  z-index:2;
+}
+.sol:hover::after{opacity:1;transform:scale(1) rotate(0)}
+.sol:hover{
+  transform:translateY(-8px);
+  border-color:var(--gold);
+  box-shadow:var(--shadow-lg);
+}
+.sol-img{
+  aspect-ratio:5/4;
+  background:var(--surface-2);
+  display:grid;place-items:center;
+  padding:36px;
+  overflow:hidden;
+  position:relative;
+}
+.sol-img img{
+  max-width:100%;max-height:100%;object-fit:contain;
+  transition: transform .9s var(--ease-out);
+}
+.sol:hover .sol-img img{transform:scale(1.1)}
+.sol-body{
+  padding:26px 28px 30px;
+  border-top:1px solid var(--border);
+}
+.sol-cat{
+  font-size:.7rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold);
+  font-weight:600;margin-bottom:10px;
+}
+.sol-body h3{
+  font-size:1.35rem;font-weight:500;
+  letter-spacing:-.015em;margin:0;
+}
+
+@media(max-width:1000px){.solutions-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.solutions-grid{grid-template-columns:1fr;gap:20px}}
+
+/* ============================================================
+   CLIENTS
+============================================================ */
+.clients-section{overflow:hidden}
+.clients-wrap{
+  margin-top:60px;
+  position:relative;
+  padding:40px 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.clients-wrap::before,.clients-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none;
+}
+.clients-wrap::before{left:0;background:linear-gradient(to right, var(--bg-alt), transparent)}
+.clients-wrap::after{right:0;background:linear-gradient(to left, var(--bg-alt), transparent)}
+
+.clients-track{
+  display:flex;gap:70px;align-items:center;
+  animation: marquee 45s linear infinite;
+  width:max-content;
+}
+.clients-track:hover{animation-play-state:paused}
+.client{
+  height:52px;
+  display:grid;place-items:center;
+  flex-shrink:0;
+  filter:grayscale(1) opacity(.55);
+  transition: all .4s var(--ease);
+}
+.client img{max-height:52px;width:auto;max-width:130px;object-fit:contain}
+.client:hover{filter:grayscale(0) opacity(1);transform:scale(1.08)}
+
+[data-theme="dark"] .client{filter:grayscale(1) opacity(.5) invert(.85)}
+[data-theme="dark"] .client:hover{filter:invert(0) grayscale(0);transform:scale(1.08)}
+
+/* ============================================================
+   CTA BAND
+============================================================ */
+.cta-band{
+  padding:130px 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  background:var(--bg-alt);
+}
+.cta-band::before{
+  content:'';position:absolute;top:50%;left:50%;
+  width:800px;height:800px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, color-mix(in srgb, var(--gold) 12%, transparent), transparent 65%);
+  pointer-events:none;
+}
+.cta-band h2{
+  font-size:clamp(2rem,4.4vw,3.4rem);
+  margin-bottom:26px;
+  max-width:820px;margin-left:auto;margin-right:auto;
+}
+.cta-band h2 em{color:var(--gold);font-style:italic;font-weight:300}
+.cta-band p{
+  color:var(--text-soft);
+  max-width:560px;margin:0 auto 40px;
+  font-size:1.02rem;
+}
+.cta-band .btn{font-size:.95rem;padding:17px 36px}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer{
+  background:var(--navy);
+  color:#e8ddc5;
+  padding:100px 0 0;
+  position:relative;
+  overflow:hidden;
+}
+[data-theme="dark"] .footer{background:var(--surface-2);color:var(--text)}
+.footer::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:var(--accent-grad);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1.3fr;
+  gap:60px;
+  padding-bottom:70px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  position:relative;z-index:2;
+}
+[data-theme="dark"] .footer-grid{border-color:var(--border)}
+
+.footer .logo img{
+  filter: brightness(0) invert(1);
+  height:36px;
+}
+[data-theme="dark"] .footer .logo img{
+  filter: brightness(0) saturate(100%) invert(92%) sepia(8%) saturate(600%) hue-rotate(346deg) brightness(98%) contrast(92%);
+}
+.footer-about p{
+  margin-top:22px;
+  color:rgba(232,221,197,.7);
+  font-size:.94rem;
+  line-height:1.75;
+  max-width:340px;
+}
+[data-theme="dark"] .footer-about p{color:var(--text-muted)}
+
+.footer h4{
+  font-family:'Inter',sans-serif;
+  font-size:.72rem;
+  text-transform:uppercase;letter-spacing:.24em;
+  margin-bottom:26px;
+  color:var(--gold-2);
+  font-weight:600;
+}
+.footer-links{display:flex;flex-direction:column;gap:14px}
+.footer-links a{
+  color:rgba(232,221,197,.75);
+  font-size:.94rem;
+  transition: all .35s var(--ease);
+  display:inline-flex;align-items:center;gap:10px;
+  width:fit-content;position:relative;
+  padding-left:0;
+}
+.footer-links a::before{
+  content:'';width:0;height:1px;background:var(--gold-2);
+  transition:width .4s var(--ease-out);
+}
+.footer-links a:hover{color:#fff;padding-left:4px}
+.footer-links a:hover::before{width:16px}
+[data-theme="dark"] .footer-links a{color:var(--text-muted)}
+[data-theme="dark"] .footer-links a:hover{color:var(--text)}
+
+.footer-links a i{
+  color:var(--gold-2);font-size:.85rem;width:16px;
+}
+
+.footer-bottom{
+  padding:32px 0;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:20px;flex-wrap:wrap;
+  color:rgba(232,221,197,.55);
+  font-size:.82rem;
+  letter-spacing:.02em;
+  position:relative;z-index:2;
+}
+[data-theme="dark"] .footer-bottom{color:var(--text-muted)}
+
+.footer-social{display:flex;gap:10px}
+.footer-social a{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.2);
+  display:grid;place-items:center;
+  color:rgba(232,221,197,.75);
+  transition: all .4s var(--ease);
+  font-size:.85rem;
+}
+.footer-social a:hover{
+  background:var(--gold);color:#0a1a2f;
+  border-color:var(--gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+[data-theme="dark"] .footer-social a{border-color:var(--border);color:var(--text-muted)}
+
+@media(max-width:900px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
+}
+@media(max-width:560px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{justify-content:center;text-align:center}
+}
+
+/* ============================================================
+   FLOATING ELEMENTS
+============================================================ */
+.whatsapp{
+  position:fixed;right:22px;bottom:22px;z-index:990;
+  width:54px;height:54px;border-radius:50%;
+  background:#25d366;color:#fff;
+  display:grid;place-items:center;font-size:1.5rem;
+  box-shadow:0 12px 30px rgba(37,211,102,.4);
+  transition: transform .35s var(--ease);
+}
+.whatsapp::after{
+  content:'';position:absolute;inset:0;border-radius:50%;
+  border:2px solid #25d366;
+  animation: pulse 2.4s infinite;
+}
+.whatsapp:hover{transform:scale(1.1) rotate(-6deg)}
+@keyframes pulse{
+  0%{transform:scale(1);opacity:.7}
+  100%{transform:scale(1.5);opacity:0}
+}
+
+.to-top{
+  position:fixed;right:22px;bottom:90px;z-index:990;
+  width:44px;height:44px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  display:grid;place-items:center;font-size:.9rem;
+  box-shadow:var(--shadow-md);
+  opacity:0;pointer-events:none;transform:translateY(12px);
+  transition: all .4s var(--ease);
+}
+[data-theme="dark"] .to-top{color:#080f1a}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{background:var(--gold);color:#fff;transform:translateY(-4px)}
+[data-theme="dark"] .to-top:hover{color:#080f1a}
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+.reveal{
+  opacity:0;transform:translateY(36px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+  will-change:opacity, transform;
+}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.1s}
+.reveal[data-delay="2"]{transition-delay:.2s}
+.reveal[data-delay="3"]{transition-delay:.3s}
+.reveal[data-delay="4"]{transition-delay:.4s}
+.reveal[data-delay="5"]{transition-delay:.5s}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001s !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001s !important;
+    scroll-behavior:auto !important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS LINE -->
+<div class="scroll-progress"><div class="scroll-progress__bar" id="progressBar"></div></div>
+
+<!-- ======================= HEADER ======================= -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo" aria-label="Teknomen Home">
+      <img src="https://teknomenltd.com/wp-content/uploads/2020/03/Weblogo-1.png" alt="Teknomen (Pvt) Ltd">
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#capabilities">Products</a>
+      <a href="#solutions">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#contact" class="header-cta"><span>Get a Quote</span></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="home">
+  <div class="hero-deco"><span>01</span></div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow reveal">Industrial Engineering · Since 2010</span>
+        <h1 class="reveal" data-delay="1">
+          Engineering<br>
+          <em>Progress</em> for Industry
+        </h1>
+        <p class="reveal" data-delay="2">
+          TEKNOMEN delivers practical engineering solutions that improve industrial
+          Automation, Equipment Performance and Reliability — specializing in VFDs,
+          Customized Control Systems, Spindle Monitoring and PCB Design.
+        </p>
+        <div class="hero-cta reveal" data-delay="3">
+          <a href="#solutions" class="btn btn-primary">
+            <span>Explore Solutions</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#about" class="btn btn-ghost">Who We Are</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-delay="2">
+        <div class="hero-card hero-card--sub-2">
+          <div>
+            <div class="mini-num" data-count="150" data-suffix="+">0</div>
+            <div class="mini-label">Projects Delivered</div>
+          </div>
+        </div>
+        <div class="hero-card hero-card--main">
+          <img id="heroMainImg" src="https://teknomenltd.com/wp-content/uploads/2026/09/bg-1.png" alt="SpinGuard Pro">
+        </div>
+        <div class="hero-card hero-card--sub-1">
+          <img src="https://teknomenltd.com/wp-content/uploads/2026/09/bg-2.png" alt="VFD">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ======================= TICKER ======================= -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">
+      <span>Industrial Automation</span><i class="fa-solid fa-circle"></i>
+      <span>VFD &amp; Motor Drives</span><i class="fa-solid fa-circle"></i>
+      <span>Spindle Monitoring</span><i class="fa-solid fa-circle"></i>
+      <span>PCB Design &amp; Fabrication</span><i class="fa-solid fa-circle"></i>
+      <span>Embedded &amp; Control Systems</span><i class="fa-solid fa-circle"></i>
+      <span>Solar &amp; Energy Solutions</span><i class="fa-solid fa-circle"></i>
+    </div>
+    <div class="ticker-item" aria-hidden="true">
+      <span>Industrial Automation</span><i class="fa-solid fa-circle"></i>
+      <span>VFD &amp; Motor Drives</span><i class="fa-solid fa-circle"></i>
+      <span>Spindle Monitoring</span><i class="fa-solid fa-circle"></i>
+      <span>PCB Design &amp; Fabrication</span><i class="fa-solid fa-circle"></i>
+      <span>Embedded &amp; Control Systems</span><i class="fa-solid fa-circle"></i>
+      <span>Solar &amp; Energy Solutions</span><i class="fa-solid fa-circle"></i>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= ABOUT ======================= -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-frame"></div>
+        <div class="about-image">
+          <img src="https://teknomenltd.com/wp-content/uploads/2026/09/Spindle-monitoring-Main.png" alt="Spindle Monitoring">
+        </div>
+        <div class="about-badge">
+          <div class="num">15+</div>
+          <div class="lbl">Years of<br>Excellence</div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="sec-num reveal">02 / About</span>
+        <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">
+          Building <em>Reliable</em> Industrial Systems
+        </h2>
+        <p class="reveal" data-delay="2">
+          <strong>TEKNOMEN</strong> delivers practical engineering solutions that improve
+          industrial Automation, Equipment Performance and Reliability. We specialize in
+          Industrial Automation, VFDs, Customized Control Systems, Spindle Monitoring,
+          Industrial Power Backup, PCB Design and Fabrication, and Innovative Solutions
+          tailored to specific production needs.
+        </p>
+        <ul class="about-list reveal" data-delay="3">
+          <li><i class="fa-solid fa-circle"></i> Industrial Automation</li>
+          <li><i class="fa-solid fa-circle"></i> Custom Control Systems</li>
+          <li><i class="fa-solid fa-circle"></i> Spindle Monitoring</li>
+          <li><i class="fa-solid fa-circle"></i> Industrial Power Backup</li>
+          <li><i class="fa-solid fa-circle"></i> PCB Design &amp; Fabrication</li>
+          <li><i class="fa-solid fa-circle"></i> VFD &amp; Motor Drives</li>
+        </ul>
+        <a href="#solutions" class="hairline reveal" data-delay="4">
+          Discover our capabilities <i class="fa-solid fa-arrow-right" style="font-size:.75rem"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CAPABILITIES ======================= -->
+<section class="section section-alt" id="capabilities">
+  <div class="container">
+    <div class="caps-head">
+      <div>
+        <span class="sec-num reveal">03 / Capabilities</span>
+        <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">
+          What We <em>Do</em> Best
+        </h2>
+      </div>
+      <p class="section-sub reveal" data-delay="2" style="max-width:420px">
+        Engineering, automation, electronics and industrial solutions designed
+        to improve performance, reliability and efficiency.
+      </p>
+    </div>
+
+    <div class="caps-grid">
+      <div class="cap reveal" data-delay="1">
+        <div class="cap-num">/ 01</div>
+        <div class="cap-icon"><i class="fa-solid fa-industry"></i></div>
+        <h3>Industrial Automation</h3>
+        <p>Complete automation solutions built around your production floor.</p>
+      </div>
+      <div class="cap reveal" data-delay="2">
+        <div class="cap-num">/ 02</div>
+        <div class="cap-icon"><i class="fa-solid fa-gears"></i></div>
+        <h3>Servo Systems</h3>
+        <p>High-precision servo motors and drives for motion-critical applications.</p>
+      </div>
+      <div class="cap reveal" data-delay="3">
+        <div class="cap-num">/ 03</div>
+        <div class="cap-icon"><i class="fa-solid fa-shirt"></i></div>
+        <h3>Textile Automation</h3>
+        <p>Purpose-built automation for spinning, weaving and finishing lines.</p>
+      </div>
+      <div class="cap reveal" data-delay="1">
+        <div class="cap-num">/ 04</div>
+        <div class="cap-icon"><i class="fa-solid fa-solar-panel"></i></div>
+        <h3>Solar &amp; Energy</h3>
+        <p>Industrial solar and backup energy systems for uninterrupted operation.</p>
+      </div>
+      <div class="cap reveal" data-delay="2">
+        <div class="cap-num">/ 05</div>
+        <div class="cap-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>VFD &amp; Motor Drives</h3>
+        <p>Economical, high-quality variable frequency drives for every motor load.</p>
+      </div>
+      <div class="cap reveal" data-delay="3">
+        <div class="cap-num">/ 06</div>
+        <div class="cap-icon"><i class="fa-solid fa-microchip"></i></div>
+        <h3>Embedded Systems</h3>
+        <p>Custom PCB design, firmware and control electronics from concept to production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= STATS ======================= -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal" data-delay="1">
+        <div class="stat-num"><span data-count="150">0</span><em>+</em></div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat reveal" data-delay="2">
+        <div class="stat-num"><span data-count="15">0</span><em>+</em></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat reveal" data-delay="3">
+        <div class="stat-num"><span data-count="99">0</span><em>%</em></div>
+        <div class="stat-label">Success Ratio</div>
+      </div>
+      <div class="stat reveal" data-delay="4">
+        <div class="stat-num"><span data-count="100">0</span><em>%</em></div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SOLUTIONS ======================= -->
+<section class="section" id="solutions">
+  <div class="container">
+    <div class="solutions-head">
+      <div>
+        <span class="sec-num reveal">04 / Portfolio</span>
+        <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">
+          Explore <em>Solutions</em>
+        </h2>
+      </div>
+      <a href="#contact" class="hairline reveal" data-delay="2">
+        Request full catalogue <i class="fa-solid fa-arrow-right" style="font-size:.75rem"></i>
+      </a>
+    </div>
+
+    <div class="solutions-grid">
+      <a href="#contact" class="sol reveal" data-delay="1">
+        <div class="sol-img"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/FIBROTEK-Product-image-2-300x300.png" alt="FibroTek"></div>
+        <div class="sol-body">
+          <div class="sol-cat">Textile</div>
+          <h3>FibroTek</h3>
+        </div>
+      </a>
+      <a href="#contact" class="sol reveal" data-delay="2">
+        <div class="sol-img"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/fuji-plc.png" alt="SpinGuard Pro"></div>
+        <div class="sol-body">
+          <div class="sol-cat">Automation</div>
+          <h3>SpinGuard Pro</h3>
+        </div>
+      </a>
+      <a href="#contact" class="sol reveal" data-delay="3">
+        <div class="sol-img"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/890-Z-72XL-ZUW.jpg" alt="Spindle Monitoring"></div>
+        <div class="sol-body">
+          <div class="sol-cat">Monitoring</div>
+          <h3>Spindle Monitoring System</h3>
+        </div>
+      </a>
+      <a href="#contact" class="sol reveal" data-delay="1">
+        <div class="sol-img"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/YC-1800-Low-Voltage-VFD2-1.png" alt="VFD"></div>
+        <div class="sol-body">
+          <div class="sol-cat">Power</div>
+          <h3>Variable Frequency Drives</h3>
+        </div>
+      </a>
+      <a href="#contact" class="sol reveal" data-delay="2">
+        <div class="sol-img"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/istockphoto-615245880-612x612-1.jpg" alt="Electronics Repair"></div>
+        <div class="sol-body">
+          <div class="sol-cat">Service</div>
+          <h3>Electronics Repair &amp; Maintenance</h3>
+        </div>
+      </a>
+      <a href="#contact" class="sol reveal" data-delay="3">
+        <div class="sol-img"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/2.png" alt="Length & Batch Controllers"></div>
+        <div class="sol-body">
+          <div class="sol-cat">Control</div>
+          <h3>Length &amp; Batch Controllers</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CLIENTS ======================= -->
+<section class="section section-alt clients-section">
+  <div class="container">
+    <div class="text-center">
+      <span class="sec-num reveal">05 / Clients</span>
+      <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">
+        Respected <em>Clients</em>
+      </h2>
+      <p class="section-sub reveal" data-delay="2" style="margin:0 auto">
+        Proudly trusted by Pakistan's leading textile, energy and manufacturing groups.
+      </p>
+    </div>
+  </div>
+
+  <div class="clients-wrap">
+    <div class="clients-track" id="clientsTrack">
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/ACPL-Logo-1-1-e1790333140561.png" alt="ACPL"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/AGTL-150x150.jpg" alt="AGTL"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Ahmed-fine-textile-mill-150x150.png" alt="Ahmed Fine Textile"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/aj-textile-150x144.png" alt="AJ Textile"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Alhamd-corp-150x150.png" alt="Alhamd Corp"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Cresent-cotton-150x150.png" alt="Crescent Cotton"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Eastern-Spinning-Mills-Ltd-150x150.jpeg" alt="Eastern Spinning"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Fatim-enterprises-150x150.jpg" alt="Fatim Enterprises"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/fazal-cloth-150x95.png" alt="Fazal Cloth"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Gulistan-textile-mills-150x150.jpg" alt="Gulistan Textile"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Hussain-group-150x130.png" alt="Hussain Group"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Khas-textile-mills-150x150.jpg" alt="Khas Textile"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/nishat-150x150.png" alt="Nishat"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Rawal-Textile-Mills-150x59.png" alt="Rawal Textile"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/ss-group-150x51.png" alt="SS Group"></div>
+      <div class="client"><img src="https://teknomenltd.com/wp-content/uploads/2026/09/Suraj-Cotton-150x129.png" alt="Suraj Cotton"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CTA BAND ======================= -->
+<section class="cta-band">
+  <div class="container">
+    <span class="sec-num reveal">06 / Contact</span>
+    <h2 class="reveal" data-delay="1" style="margin-top:14px">
+      Let's engineer your <em>next</em> breakthrough.
+    </h2>
+    <p class="reveal" data-delay="2">
+      Tell us about your production challenge — we'll design a solution around it.
+    </p>
+    <div class="reveal" data-delay="3">
+      <a href="https://wa.me/923156185476" class="btn btn-primary">
+        <span>Start a Conversation</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#" class="logo">
+          <img src="https://teknomenltd.com/wp-content/uploads/2020/03/Weblogo-1.png" alt="Teknomen (Pvt) Ltd">
+        </a>
+        <p>Delivering practical engineering solutions that improve industrial Automation, Equipment Performance and Reliability.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#solutions">FibroTek</a>
+          <a href="#solutions">SpinGuard Pro</a>
+          <a href="#solutions">Spindle Monitoring</a>
+          <a href="#solutions">Industrial USPs</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#capabilities">Products</a>
+          <a href="#solutions">Services</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Get in Touch</h4>
+        <div class="footer-links">
+          <a href="#contact"><i class="fa-solid fa-location-dot"></i> Pakistan</a>
+          <a href="https://wa.me/923156185476"><i class="fa-solid fa-phone"></i> +92 315 6185476</a>
+          <a href="mailto:info@teknomenltd.com"><i class="fa-solid fa-envelope"></i> info@teknomenltd.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>&copy; <span id="year"></span> Teknomen (Pvt) Ltd. All rights reserved.</small>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING -->
+<a href="https://wa.me/923156185476" class="whatsapp" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+/* ============================================================
+   THEME
+============================================================ */
+(function(){
+  const root = document.documentElement;
+  const saved = localStorage.getItem('tek-theme');
+  const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+  root.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('tek-theme', next);
+  });
+})();
+
+/* ============================================================
+   SCROLL PROGRESS LINE
+============================================================ */
+const progressBar = document.getElementById('progressBar');
+function updateProgress(){
+  const h = document.documentElement;
+  const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progressBar.style.width = (scrolled * 100) + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+window.addEventListener('resize', updateProgress);
+updateProgress();
+
+/* ============================================================
+   HEADER / MENU / TO-TOP
+============================================================ */
+const header = document.getElementById('header');
+const nav = document.getElementById('nav');
+const menuToggle = document.getElementById('menuToggle');
+const toTop = document.getElementById('toTop');
+
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', scrollY > 20);
+  toTop.classList.toggle('show', scrollY > 500);
+}, { passive: true });
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  const i = menuToggle.querySelector('i');
+  i.className = nav.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open');
+  menuToggle.querySelector('i').className = 'fa-solid fa-bars';
+}));
+toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ============================================================
+   COUNTERS
+============================================================ */
+function animateCount(el){
+  const target = +el.dataset.count;
+  const dur = 2000;
+  const start = performance.now();
+  function step(now){
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(eased * target);
+    if(p < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      animateCount(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+/* ============================================================
+   HERO MAIN IMAGE ROTATION (subtle)
+============================================================ */
+(function(){
+  const img = document.getElementById('heroMainImg');
+  if(!img) return;
+  const list = [
+    'https://teknomenltd.com/wp-content/uploads/2026/09/bg-1.png',
+    'https://teknomenltd.com/wp-content/uploads/2026/09/bg-3.png',
+    'https://teknomenltd.com/wp-content/uploads/2026/09/bg-2.png',
+    'https://teknomenltd.com/wp-content/uploads/2026/09/bg.png',
+    'https://teknomenltd.com/wp-content/uploads/2026/09/Spindle-monitoring-Main.png'
+  ];
+  let i = 0;
+  setInterval(() => {
+    i = (i + 1) % list.length;
+    img.classList.add('fade-swap');
+    setTimeout(() => {
+      img.src = list[i];
+      img.onload = () => img.classList.remove('fade-swap');
+    }, 380);
+  }, 5500);
+})();
+
+/* ============================================================
+   CLIENTS MARQUEE DUPLICATE
+============================================================ */
+(function(){
+  const t = document.getElementById('clientsTrack');
+  if(t) t.innerHTML += t.innerHTML;
+})();
+
+/* ============================================================
+   YEAR
+============================================================ */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

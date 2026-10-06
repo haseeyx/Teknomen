@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Teknomen (Pvt) Ltd — Your Partner in Progress</title>
+<meta name="description" content="TEKNOMEN delivers practical engineering solutions for Industrial Automation, VFDs, Customized Control Systems, Spindle Monitoring, Industrial Power Backup, PCB Design & Fabrication." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scroll-progress"><div class="scroll-progress__bar" id="progressBar"></div></div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo" aria-label="Teknomen Home">
+      <img src="Weblogo.png" alt="Teknomen (Pvt) Ltd">
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#products">Products</a>
+      <a href="#capabilities">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#contact" class="header-cta"><span>Get a Quote</span></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-deco"><span>01</span></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow reveal">Industrial Engineering · Since 2010</span>
+        <h1 class="reveal" data-delay="1">Engineering<br><em>Progress</em> for Industry</h1>
+        <p class="reveal" data-delay="2">TEKNOMEN delivers practical engineering solutions that improve industrial Automation, Equipment Performance and Reliability — specializing in VFDs, Customized Control Systems, Spindle Monitoring and PCB Design.</p>
+        <div class="hero-cta reveal" data-delay="3">
+          <a href="#products" class="btn btn-primary"><span>Explore Products</span><i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#about" class="btn btn-ghost">Who We Are</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal" data-delay="2">
+        <div class="hero-card hero-card--sub-2">
+          <div>
+            <div class="mini-num" data-count="150" data-suffix="+">0</div>
+            <div class="mini-label">Projects Delivered</div>
+          </div>
+        </div>
+        <div class="hero-card hero-card--main">
+          <img id="heroMainImg" src="SpinGuard Main.png" alt="SpinGuard Pro">
+        </div>
+        <div class="hero-card hero-card--sub-1">
+          <img src="Variable Frequency Drives.png" alt="VFD">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><div class="line"></div></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">
+      <span>Industrial Automation</span><i class="fa-solid fa-circle"></i>
+      <span>VFD &amp; Motor Drives</span><i class="fa-solid fa-circle"></i>
+      <span>Spindle Monitoring</span><i class="fa-solid fa-circle"></i>
+      <span>PCB Design &amp; Fabrication</span><i class="fa-solid fa-circle"></i>
+      <span>Embedded &amp; Control Systems</span><i class="fa-solid fa-circle"></i>
+      <span>Solar &amp; Energy Solutions</span><i class="fa-solid fa-circle"></i>
+    </div>
+    <div class="ticker-item" aria-hidden="true">
+      <span>Industrial Automation</span><i class="fa-solid fa-circle"></i>
+      <span>VFD &amp; Motor Drives</span><i class="fa-solid fa-circle"></i>
+      <span>Spindle Monitoring</span><i class="fa-solid fa-circle"></i>
+      <span>PCB Design &amp; Fabrication</span><i class="fa-solid fa-circle"></i>
+      <span>Embedded &amp; Control Systems</span><i class="fa-solid fa-circle"></i>
+      <span>Solar &amp; Energy Solutions</span><i class="fa-solid fa-circle"></i>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section section-alt" id="products">
+  <div class="container">
+    <div class="products-head">
+      <div>
+        <span class="sec-num reveal">03 / Our Products</span>
+        <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">Engineered <em>Products</em></h2>
+      </div>
+      <p class="section-sub reveal" data-delay="2" style="max-width:440px">Eight purpose-built product families spanning textile automation, industrial power, motion control and machine monitoring. Click any card to explore full specifications.</p>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="caps-head">
+      <div>
+        <span class="sec-num reveal">04 / Services</span>
+        <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">What We <em>Do</em> Best</h2>
+      </div>
+      <p class="section-sub reveal" data-delay="2" style="max-width:420px">Engineering, automation, electronics and industrial solutions designed to improve performance, reliability and efficiency.</p>
+    </div>
+    <div class="caps-grid">
+      <div class="cap reveal" data-delay="1"><div class="cap-num">/ 01</div><div class="cap-icon"><i class="fa-solid fa-industry"></i></div><h3>Industrial Automation</h3><p>Complete automation solutions built around your production floor — from PLC programming to full line integration.</p></div>
+      <div class="cap reveal" data-delay="2"><div class="cap-num">/ 02</div><div class="cap-icon"><i class="fa-solid fa-gears"></i></div><h3>Servo Systems</h3><p>High-precision servo motors and drives for motion-critical textile and packaging applications.</p></div>
+      <div class="cap reveal" data-delay="3"><div class="cap-num">/ 03</div><div class="cap-icon"><i class="fa-solid fa-shirt"></i></div><h3>Textile Automation</h3><p>Purpose-built automation for spinning, weaving and finishing lines — engineered for zero downtime.</p></div>
+      <div class="cap reveal" data-delay="1"><div class="cap-num">/ 04</div><div class="cap-icon"><i class="fa-solid fa-solar-panel"></i></div><h3>Solar &amp; Energy</h3><p>Industrial solar and backup energy systems that keep critical loads running through every outage.</p></div>
+      <div class="cap reveal" data-delay="2"><div class="cap-num">/ 05</div><div class="cap-icon"><i class="fa-solid fa-bolt"></i></div><h3>VFD &amp; Motor Drives</h3><p>Economical, high-quality variable frequency drives for every motor load — with full after-sales support.</p></div>
+      <div class="cap reveal" data-delay="3"><div class="cap-num">/ 06</div><div class="cap-icon"><i class="fa-solid fa-microchip"></i></div><h3>Embedded Systems</h3><p>Custom PCB design, firmware and control electronics — from proof of concept to full production.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center">
+      <span class="sec-num reveal">05 / Why TEKNOMEN</span>
+      <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">Built on <em>Trust</em>, Driven by Engineering</h2>
+      <p class="section-sub reveal" data-delay="2" style="margin:0 auto">What sets us apart isn't just the technology — it's how we stand behind it, every step of the way.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal" data-delay="1"><div class="why-num">01</div><div class="why-icon"><i class="fa-solid fa-medal"></i></div><h3>Proven Track Record</h3><p>Over 150 successful installations across Pakistan's leading textile, energy and manufacturing groups.</p></div>
+      <div class="why-card reveal" data-delay="2"><div class="why-num">02</div><div class="why-icon"><i class="fa-solid fa-drafting-compass"></i></div><h3>Custom Engineering</h3><p>No off-the-shelf shortcuts. Every solution is designed around your specific production constraints.</p></div>
+      <div class="why-card reveal" data-delay="3"><div class="why-num">03</div><div class="why-icon"><i class="fa-solid fa-headset"></i></div><h3>Local Support</h3><p>On-site engineers and rapid response times — because downtime costs more than any component.</p></div>
+      <div class="why-card reveal" data-delay="4"><div class="why-num">04</div><div class="why-icon"><i class="fa-solid fa-gauge-high"></i></div><h3>Fast Turnaround</h3><p>From design to commissioning, we deliver on schedule without compromising on quality or safety.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <span class="sec-num reveal">06 / Our Process</span>
+      <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">How We <em>Work</em></h2>
+      <p class="section-sub reveal" data-delay="2" style="margin:0 auto">A disciplined five-step process refined over 15 years of industrial deployments.</p>
+    </div>
+    <div class="process-wrap" id="process">
+      <div class="process-line"></div>
+      <div class="process-line-fill" id="processFill"></div>
+      <div class="process-step reveal" data-delay="1"><div class="step-content"><h3>Consultation &amp; Site Survey</h3><p>We visit your facility, understand the production bottleneck, and document every constraint before proposing a single component.</p></div><div class="step-num"><span>01</span></div></div>
+      <div class="process-step reveal" data-delay="2"><div class="step-content"><h3>Design &amp; Engineering</h3><p>Our engineers produce schematics, control logic, BOMs and wiring diagrams — reviewed with your team before fabrication begins.</p></div><div class="step-num"><span>02</span></div></div>
+      <div class="process-step reveal" data-delay="3"><div class="step-content"><h3>Fabrication &amp; Assembly</h3><p>Panels are built in our workshop, PCBs are assembled in-house, and every unit is functionally tested under load before shipping.</p></div><div class="step-num"><span>03</span></div></div>
+      <div class="process-step reveal" data-delay="4"><div class="step-content"><h3>Installation &amp; Commissioning</h3><p>On-site installation, calibration and operator training — with a documented handover and full as-built documentation.</p></div><div class="step-num"><span>04</span></div></div>
+      <div class="process-step reveal" data-delay="5"><div class="step-content"><h3>Ongoing Support</h3><p>Preventive maintenance, spare parts availability, remote diagnostics and upgrades — for the life of the system.</p></div><div class="step-num"><span>05</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal" data-delay="1"><div class="stat-num"><span data-count="150">0</span><em>+</em></div><div class="stat-label">Projects Completed</div></div>
+      <div class="stat reveal" data-delay="2"><div class="stat-num"><span data-count="15">0</span><em>+</em></div><div class="stat-label">Years of Experience</div></div>
+      <div class="stat reveal" data-delay="3"><div class="stat-num"><span data-count="99">0</span><em>%</em></div><div class="stat-label">Success Ratio</div></div>
+      <div class="stat reveal" data-delay="4"><div class="stat-num"><span data-count="100">0</span><em>%</em></div><div class="stat-label">Client Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center">
+      <span class="sec-num reveal">07 / Industries</span>
+      <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">Where Our <em>Solutions</em> Run</h2>
+      <p class="section-sub reveal" data-delay="2" style="margin:0 auto">From spinning floors to substations — our automation runs where reliability matters most.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="ind reveal" data-delay="1"><div class="ind-icon"><i class="fa-solid fa-shirt"></i></div><h3>Textile &amp; Spinning</h3><p>Ring frames, compact spinning, doffing automation and hairiness control.</p></div>
+      <div class="ind reveal" data-delay="2"><div class="ind-icon"><i class="fa-solid fa-bolt"></i></div><h3>Energy &amp; Power</h3><p>Industrial backup systems, solar hybrid setups and power quality monitoring.</p></div>
+      <div class="ind reveal" data-delay="3"><div class="ind-icon"><i class="fa-solid fa-industry"></i></div><h3>Manufacturing</h3><p>Servo-driven production lines, motion control and process automation.</p></div>
+      <div class="ind reveal" data-delay="1"><div class="ind-icon"><i class="fa-solid fa-box"></i></div><h3>Packaging</h3><p>Length and batch control, high-speed winding and quality inspection.</p></div>
+      <div class="ind reveal" data-delay="2"><div class="ind-icon"><i class="fa-solid fa-flask"></i></div><h3>Pharmaceutical</h3><p>Precision pressure and temperature control with full audit trails.</p></div>
+      <div class="ind reveal" data-delay="3"><div class="ind-icon"><i class="fa-solid fa-utensils"></i></div><h3>Food &amp; Beverage</h3><p>Hygienic automation for filling, sealing and high-throughput packaging lines.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <span class="sec-num reveal">08 / Testimonials</span>
+      <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">Words From Our <em>Clients</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi reveal" data-delay="1"><div class="testi-quote">&ldquo;</div><div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="testi-text">TEKNOMEN's Spindle Monitoring System cut our unscheduled downtime by nearly 40%. Their engineers understood our production floor better than anyone we'd worked with before.</p><div class="testi-author"><div class="testi-avatar">AK</div><div><div class="testi-name">Ahmed Khan</div><div class="testi-role">Production Manager · Textile Group</div></div></div></div>
+      <div class="testi reveal" data-delay="2"><div class="testi-quote">&ldquo;</div><div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="testi-text">We've installed TEKNOMEN VFDs across three of our production lines. Reliable, well-supported and priced fairly. Their after-sales service is the real differentiator.</p><div class="testi-author"><div class="testi-avatar">SM</div><div><div class="testi-name">Sarah Malik</div><div class="testi-role">Engineering Head · Manufacturing</div></div></div></div>
+      <div class="testi reveal" data-delay="3"><div class="testi-quote">&ldquo;</div><div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="testi-text">From consultation to commissioning, everything was documented and on schedule. The SpinGuard Pro upgrade paid for itself within the first quarter.</p><div class="testi-author"><div class="testi-avatar">RH</div><div><div class="testi-name">Rashid Hussain</div><div class="testi-role">Plant Director · Spinning Mills</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section section-alt clients-section" id="clients">
+  <div class="container">
+    <div class="clients-meta">
+      <div>
+        <span class="sec-num reveal">09 / Clients</span>
+        <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">Respected <em>Clients</em></h2>
+        <p class="section-sub reveal" data-delay="2" style="max-width:520px">Proudly trusted by Pakistan's leading textile, energy and manufacturing groups — a partnership built on delivered results.</p>
+      </div>
+      <div class="clients-badge reveal" data-delay="3"><span class="dot"></span><span><strong>16+</strong> Long-term partners</span></div>
+    </div>
+    <div class="clients-strip reveal" data-delay="1">
+      <div class="clients-strip-track" id="clientsStrip">
+        <div class="client-logo"><img src="Client Logos/ACPL Logo.png" alt="ACPL"></div>
+        <div class="client-logo"><img src="Client Logos/AGTL.jpg" alt="AGTL"></div>
+        <div class="client-logo"><img src="Client Logos/Ahmed fine textile mill.png" alt="Ahmed Fine Textile"></div>
+        <div class="client-logo"><img src="Client Logos/aj-textile.png" alt="AJ Textile"></div>
+        <div class="client-logo"><img src="Client Logos/Alhamd corp.png" alt="Alhamd Corp"></div>
+        <div class="client-logo"><img src="Client Logos/colony_textile_mills_limited_logo.jpg" alt="Colony Textile Mills"></div>
+        <div class="client-logo"><img src="Client Logos/Cresent cotton.png" alt="Crescent Cotton"></div>
+        <div class="client-logo"><img src="Client Logos/Eastern-Spinning-Mills-Ltd.jpeg" alt="Eastern Spinning Mills"></div>
+        <div class="client-logo"><img src="Client Logos/Fatim enterprises.jpg" alt="Fatim Enterprises"></div>
+        <div class="client-logo"><img src="Client Logos/fazal cloth.png" alt="Fazal Cloth"></div>
+        <div class="client-logo"><img src="Client Logos/Gulistan textile mills.jpg" alt="Gulistan Textile Mills"></div>
+        <div class="client-logo"><img src="Client Logos/Hussain group.png" alt="Hussain Group"></div>
+        <div class="client-logo"><img src="Client Logos/Khas textile mills.jpg" alt="Khas Textile Mills"></div>
+        <div class="client-logo"><img src="Client Logos/nishat.png" alt="Nishat"></div>
+        <div class="client-logo"><img src="Client Logos/Rawal Textile Mills.png" alt="Rawal Textile Mills"></div>
+        <div class="client-logo"><img src="Client Logos/shadman_cotton_mills_ltd.jpg" alt="Shadman Cotton Mills"></div>
+        <div class="client-logo"><img src="Client Logos/ss group.png" alt="SS Group"></div>
+        <div class="client-logo"><img src="Client Logos/Suraj Cotton.png" alt="Suraj Cotton"></div>
+      </div>
+    </div>
+    <div class="clients-cta reveal" data-delay="2"><a href="#contact" class="btn btn-ghost">Become a Partner <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-orbit"></div>
+        <div class="about-dots"></div>
+        <div class="about-frame"></div>
+        <div class="about-image">
+          <img src="Spindle monitoring Main.png" alt="Spindle Monitoring">
+          <span class="about-corner tl"></span>
+          <span class="about-corner tr"></span>
+          <span class="about-corner bl"></span>
+          <span class="about-corner br"></span>
+        </div>
+        <div class="about-badge">
+          <div class="num">15+</div>
+          <div class="lbl">Years of<br>Excellence</div>
+        </div>
+        <div class="about-mini-badge">
+          <i class="fa-solid fa-award"></i>
+          <div>
+            <strong>ISO Certified</strong>
+            <span>Quality Assured</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="sec-num reveal">02 / About</span>
+        <h2 class="section-title reveal" data-delay="1">Building <em>Reliable</em><br>Industrial Systems</h2>
+        <p class="reveal" data-delay="2"><strong>TEKNOMEN</strong> delivers practical engineering solutions that improve industrial Automation, Equipment Performance and Reliability. We specialize in Industrial Automation, VFDs, Customized Control Systems, Spindle Monitoring, Industrial Power Backup, PCB Design and Fabrication, and Innovative Solutions tailored to specific production needs.</p>
+        <ul class="about-list reveal" data-delay="3">
+          <li><i class="fa-solid fa-circle"></i> Industrial Automation</li>
+          <li><i class="fa-solid fa-circle"></i> Custom Control Systems</li>
+          <li><i class="fa-solid fa-circle"></i> Spindle Monitoring</li>
+          <li><i class="fa-solid fa-circle"></i> Industrial Power Backup</li>
+          <li><i class="fa-solid fa-circle"></i> PCB Design &amp; Fabrication</li>
+          <li><i class="fa-solid fa-circle"></i> VFD &amp; Motor Drives</li>
+        </ul>
+        <a href="#products" class="hairline reveal" data-delay="4">Explore our products <i class="fa-solid fa-arrow-right" style="font-size:.75rem"></i></a>
+        <div class="reveal" data-delay="5" style="margin-top:22px">
+          <span class="about-signature"><i class="fa-solid fa-check-circle"></i> Trusted by 16+ industrial partners across Pakistan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center">
+      <span class="sec-num reveal">10 / FAQ</span>
+      <h2 class="section-title reveal" data-delay="1" style="margin-top:14px">Common <em>Questions</em></h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item reveal" data-delay="1"><button class="faq-q">What industries do you serve?<span class="plus"><i class="fa-solid fa-plus"></i></span></button><div class="faq-a"><p>We primarily serve textile and spinning mills, manufacturing plants, energy and power facilities, packaging lines, pharmaceutical producers, and food &amp; beverage operations. Our solutions are customized for each industry's specific regulatory and environmental requirements.</p></div></div>
+      <div class="faq-item reveal" data-delay="2"><button class="faq-q">Do you offer on-site installation and commissioning?<span class="plus"><i class="fa-solid fa-plus"></i></span></button><div class="faq-a"><p>Yes. Every project includes on-site installation, calibration, operator training and a documented handover. Our engineering team stays involved through the first production cycle to ensure everything runs to specification.</p></div></div>
+      <div class="faq-item reveal" data-delay="3"><button class="faq-q">Can you retrofit automation into existing machines?<span class="plus"><i class="fa-solid fa-plus"></i></span></button><div class="faq-a"><p>Absolutely. Retrofit is one of our core strengths. Systems like SpinGuard Pro are specifically designed to add intelligent automation to existing ring spinning frames without replacing hardware or modifying the base machine.</p></div></div>
+      <div class="faq-item reveal" data-delay="4"><button class="faq-q">What kind of after-sales support do you provide?<span class="plus"><i class="fa-solid fa-plus"></i></span></button><div class="faq-a"><p>We offer preventive maintenance schedules, guaranteed spare parts availability, remote diagnostics, firmware upgrades, and rapid on-site response. Support agreements are tailored to your production criticality.</p></div></div>
+      <div class="faq-item reveal" data-delay="5"><button class="faq-q">How long does a typical project take?<span class="plus"><i class="fa-solid fa-plus"></i></span></button><div class="faq-a"><p>Small retrofits and single-panel systems typically deliver in 2–4 weeks. Full production-line automation projects run 6–12 weeks from design sign-off, depending on scope. We always provide a documented timeline before work begins.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <span class="sec-num reveal">11 / Contact</span>
+    <h2 class="reveal" data-delay="1" style="margin-top:14px">Let's engineer your <em>next</em> breakthrough.</h2>
+    <p class="reveal" data-delay="2">Tell us about your production challenge — we'll design a solution around it.</p>
+    <div class="reveal" data-delay="3"><a href="https://wa.me/923156185476" class="btn btn-primary"><span>Start a Conversation</span><i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#home" class="logo">
+          <img src="Footer logo.png" alt="Teknomen (Pvt) Ltd">
+        </a>
+        <p>Delivering practical engineering solutions that improve industrial Automation, Equipment Performance and Reliability.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <div class="footer-links">
+          <a href="#" role="button" data-open="spinguard-pro">SpinGuard Pro</a>
+          <a href="#" role="button" data-open="fibrotek">FibroTek</a>
+          <a href="#" role="button" data-open="spindle-monitoring">Spindle Monitoring</a>
+          <a href="#" role="button" data-open="vfds">VFD &amp; Motor Drives</a>
+          <a href="#" role="button" data-open="length-batch">Length &amp; Batch Controllers</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#capabilities">Services</a>
+          <a href="#clients">Our Clients</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <div class="footer-links">
+          <a href="https://wa.me/923156185476" target="_blank" rel="noopener"><i class="fa-solid fa-phone"></i> +92 315 6185476</a>
+          <a href="mailto:info@teknomenltd.com"><i class="fa-solid fa-envelope"></i> info@teknomenltd.com</a>
+          <a href="#contact"><i class="fa-solid fa-location-dot"></i> Pakistan</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; <span id="year"></span> Teknomen (Pvt) Ltd. All rights reserved.</small>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/923156185476" class="whatsapp" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
