@@ -83,8 +83,8 @@ Suitable for all material counts and a wide range of fiber/material types used i
     applications: ['Textile Ring Spinning Frames','Different material counts','Different fiber / material types','Compact spinning applications','Ring spinning production lines','Textile mills seeking improved suction consistency','Applications requiring suction monitoring and optimization'],
   },
   {
-    id: 'spindle-monitoring', name: 'Spindle Monitoring System', category: 'Machine Monitoring',
-    tagline: 'Complete Visibility. Every Spindle.', subtitle: 'Real-time spindle-level monitoring for textile ring spinning frames',
+    id: 'spindle-monitoring', name: 'Spindle Monitoring System', category: '',
+    tagline: 'Complete Visibility. Every Spindle.', subtitle: 'Real-time Spindle-Level Monitoring For Textile Ring Spinning Frames',
     images: expandImages(IMG.spindle),
     shortDesc: 'Real-time visibility into the operating condition and performance of every individual spindle.',
     description: `The Spindle Monitoring System is an advanced monitoring solution for ring spinning frames that provides real-time visibility into the operating condition and production performance of individual spindles.
